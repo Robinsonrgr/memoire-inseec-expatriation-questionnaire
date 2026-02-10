@@ -42,7 +42,6 @@
       box-shadow: 0 10px 24px rgba(0,0,0,0.06);
     }
 
-    /* Header with logo */
     .header{
       display:flex;
       align-items:center;
@@ -67,6 +66,12 @@
       font-weight:700;
     }
 
+    h2{
+      font-size:18px;
+      font-weight:700;
+      margin-top:14px;
+    }
+
     .block{
       margin-top:14px;
       padding-top:14px;
@@ -74,12 +79,26 @@
     }
 
     p{
-      margin:0 0 8px 0;
+      margin:0;
       font-size:14.5px;
+      line-height:1.45;
     }
 
-    .lang-lines{
-      margin-top:12px;
+    /* One deliberate space before "Durée estimée" / "Estimated completion time" */
+    .duration-gap{
+      margin-top:10px;
+    }
+
+    .lang-section{
+      margin-top:14px;
+      padding-top:14px;
+      border-top:1px dashed var(--border);
+    }
+
+    .lang-title{
+      font-weight:700;
+      color:var(--navy);
+      margin-bottom:6px;
     }
 
     .cta-wrap{
@@ -88,7 +107,6 @@
       gap:12px;
     }
 
-    /* Responsive: stack CTA on phone */
     @media (max-width:640px){
       .container{ padding:20px; }
       .logo{ height:40px; }
@@ -96,7 +114,6 @@
       .cta-wrap{ flex-direction:column; }
     }
 
-    /* CTA buttons: outlined navy -> fill navy + white text on hover/click */
     .cta{
       flex:1;
       display:inline-flex;
@@ -133,30 +150,40 @@
   <main class="container">
 
     <div class="header">
-      <!-- LOGO : colle ici un lien direct vers l'image (png/jpg/svg) -->
       <img class="logo" src="https://campuschartrons-bordeaux.com/wp-content/uploads/2025/11/Logo-paysage-%E2%80%A2-inseec-grande-ecole.webp" alt="Logo de l’école" />
       <h1>Etude académique – Mémoire de recherche sur l’expatriation</h1>
     </div>
 
     <div class="block">
-      <h2>Description :</h2>
 
-      <p>Cette étude s’inscrit dans le cadre d’un mémoire de recherche en sciences de gestion.</p>
-      <p>Elle vise à mieux comprendre l’expérience professionnelle internationale au sein des organisations, ainsi que certains mécanismes liés à l’adaptation et au vécu professionnel des individus en contexte international.</p>
-      <p>Durée estimée du questionnaire : environ 8 à 10 minutes.</p>
-      <p>Votre participation à cette étude est entièrement volontaire et anonyme.</p>
-      <p>Vous êtes libre d’interrompre le questionnaire à tout moment, sans justification.</p>
-
-      <p style="margin-top:12px;">This study is conducted as part of a research master’s thesis in management sciences.</p>
-      <p>It aims to better understand international professional experience within organizations, as well as certain mechanisms related to adaptation and individuals’ professional experiences in an international context.</p>
-      <p>Estimated completion time: approximately 8 to 10 minutes.</p>
-      <p>Your participation in this study is entirely voluntary and anonymous.</p>
-      <p>You are free to stop the questionnaire at any time, without providing any justification.</p>
-
-      <div class="lang-lines">
-        <p><strong style="color:var(--navy);">Veuillez choisir la langue dans laquelle vous souhaitez répondre au questionnaire.</strong></p>
-        <p><em>Please choose the language in which you wish to complete the questionnaire.</em></p>
+      <!-- FR -->
+      <div class="lang-section">
+        <div class="lang-title"><strong>Français</strong></div>
+        <p>
+          Cette étude s’inscrit dans le cadre d’un mémoire de recherche en sciences de gestion.
+          Elle vise à mieux comprendre l’expérience professionnelle internationale au sein des organisations, ainsi que certains mécanismes liés à l’adaptation et au vécu professionnel des individus en contexte international.
+          <span class="duration-gap" style="display:block;"></span>
+          Durée estimée du questionnaire : environ 8 à 10 minutes.
+          Votre participation à cette étude est entièrement volontaire et anonyme.
+          Vous êtes libre d’interrompre le questionnaire à tout moment, sans justification.
+        </p>
       </div>
+
+      <!-- EN -->
+      <div class="lang-section">
+        <div class="lang-title"><strong>English</strong></div>
+        <p>
+          This study is conducted as part of a research master’s thesis in management sciences.
+          It aims to better understand international professional experience within organizations, as well as certain mechanisms related to adaptation and individuals’ professional experiences in an international context.
+          <span class="duration-gap" style="display:block;"></span>
+          Estimated completion time: approximately 8 to 10 minutes.
+          Your participation in this study is entirely voluntary and anonymous.
+          You are free to stop the questionnaire at any time, without providing any justification.
+        </p>
+      </div>
+
+      <!-- Language choice title + CTAs -->
+      <h2>Veuillez choisir la langue / Please choose the language</h2>
 
       <div class="cta-wrap">
         <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSf_iEJEjXLSGLfKUwTfQfWaYx8mnv4uR1Yyp2Yhm-_gjfEKTw/viewform?usp=header" rel="noopener noreferrer">
@@ -166,6 +193,7 @@
           Complete the questionnaire in English
         </a>
       </div>
+
     </div>
 
   </main>
